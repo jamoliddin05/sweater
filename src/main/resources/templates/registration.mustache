@@ -3,12 +3,16 @@
     <title>sweater</title>
 </head>
 <body>
-    <form method="post" action="/login">
+<h1>Добавить нового пользователя</h1>
+{{#message}}
+    {{message}}
+{{/message}}
+    <form method="post" action="/registration">
         <div><label> Имя пользователя: <input type="text" name="username"/> </label></div>
         <div><label> Пароль: <input type="password" name="password"/> </label></div>
         <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-        <div><input type="submit" value="Войти"/></div>
+        <div><input type="submit" value="Добавить"/></div>
     </form>
-    <a href="/registration">Зарегистрироваться</a>
+
 </body>
 </html>
