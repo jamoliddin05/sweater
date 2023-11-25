@@ -16,14 +16,14 @@ public class MessageController {
 
     private final MessageRepository messageRepo;
 
-    @GetMapping("/main")
+    @GetMapping("/messages")
     public String mainPage(Map<String, Object> model) {
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
         return "message_view";
     }
 
-    @PostMapping("/main")
+    @PostMapping("/messages")
     public String processMessage(@RequestParam String text, @RequestParam String tag,
                                  Map<String, Object> model) {
         Message message = new Message(text, tag);
@@ -32,10 +32,10 @@ public class MessageController {
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
 
-        return "redirect:/main";
+        return "redirect:/messages";
     }
 
-    @PostMapping("/main/filter")
+    @PostMapping("/messages/filter")
     public String filterSearch(@RequestParam String tag,
                                Map<String, Object> model) {
         Iterable<Message> messages;
