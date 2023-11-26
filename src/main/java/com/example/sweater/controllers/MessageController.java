@@ -6,6 +6,7 @@ import com.example.sweater.repos.MessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,9 +20,19 @@ public class MessageController {
     private final MessageRepository messageRepo;
 
     @GetMapping("/messages")
-    public String mainPage(Map<String, Object> model) {
+    public String mainPage(Model model,
+                           @AuthenticationPrincipal User user,
+                           @RequestParam(required = false) String tag) {
         Iterable<Message> messages = messageRepo.findAll();
-        model.put("messages", messages);
+
+        if(tag != null && !tag.isEmpty()) {
+            messages = messageRepo.findByTag(tag);
+        }
+
+        model.addAttribute("messages", messages);
+        model.addAttribute("filter", tag);
+        model.addAttribute("user", user);
+
         return "message_view";
     }
 
@@ -30,28 +41,13 @@ public class MessageController {
             @AuthenticationPrincipal User user,
             @RequestParam String text,
             @RequestParam String tag,
-            Map<String, Object> model) {
+            Model model) {
         Message message = new Message(text, tag, user);
         messageRepo.save(message);
 
         Iterable<Message> messages = messageRepo.findAll();
-        model.put("messages", messages);
+        model.addAttribute("messages", messages);
 
         return "redirect:/messages";
-    }
-
-    @PostMapping("/messages/filter")
-    public String filterSearch(@RequestParam String tag,
-                               Map<String, Object> model) {
-        Iterable<Message> messages;
-
-        if(tag != null) {
-            messages = messageRepo.findByTag(tag);
-        } else {
-            messages = messageRepo.findAll();
-        }
-
-        model.put("messages", messages);
-        return "message_view";
     }
 }
