@@ -4,5 +4,5 @@
 <@c.page>
     <h1>Страница для регистрации</h1>
     ${message!}
-<@l.login "/registration", "Добавить" />
+<@l.login "/registration", "Добавить", true />
 </@c.page>

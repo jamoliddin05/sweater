@@ -3,6 +3,5 @@
 
 <@c.page>
     <h1>Страница для входа</h1>
-<@l.login "/login", "Войти" />
-<a href="/registration">Зарегистрироваться</a>
+<@l.login "/login", "Войти", false />
 </@c.page>
