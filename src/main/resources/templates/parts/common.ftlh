@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sweater</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
 <#nested>
