@@ -17,7 +17,7 @@
     </div>
 
     <form method="get" action="/messages">
-        <input type="text" name="tag">
+        <input type="text" name="tag" value="${filter!}">
         <button type="submit">Найти</button>
     </form>
 
