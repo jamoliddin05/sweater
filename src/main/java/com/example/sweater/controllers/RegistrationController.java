@@ -5,11 +5,11 @@ import com.example.sweater.models.User;
 import com.example.sweater.repos.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Collections;
-import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,11 +23,11 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String register(User user, Map<String, Object> model) {
+    public String register(User user, Model model) {
         User userFromDB = userRepo.findByUsername(user.getUsername());
 
         if(userFromDB != null) {
-            model.put("message", "User exists!");
+            model.addAttribute("message", "User exists!");
             return "registration";
         }
         user.setActive(true);
