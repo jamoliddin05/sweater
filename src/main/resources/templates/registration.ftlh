@@ -3,6 +3,6 @@
 
 <@c.page>
     <h1>Страница для регистрации</h1>
-    ${message}
+    ${message!}
 <@l.login "/registration", "Добавить" />
 </@c.page>
