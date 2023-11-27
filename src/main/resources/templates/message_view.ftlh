@@ -5,6 +5,7 @@
     <div>
         <h3>Ваш юзернейм: ${user.username}</h3>
         <@l.logout />
+        <span><a href="/user">Список пользователей</a></span>
     </div>
     <div>
         <form method="post" action="/messages">
@@ -16,7 +17,7 @@
     </div>
 
     <form method="get" action="/messages">
-        <input type="text" name="tag" value="${filter}">
+        <input type="text" name="tag" value="${filter!}">
         <button type="submit">Найти</button>
     </form>
 
