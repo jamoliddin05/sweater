@@ -5,6 +5,7 @@
     <div>
         <h3>Ваш юзернейм: ${user.username}</h3>
         <@l.logout />
+        <span><a href="/user">Список пользователей</a></span>
     </div>
     <div>
         <form method="post" action="/messages">
