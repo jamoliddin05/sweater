@@ -28,7 +28,6 @@ public class MessageController {
 
     @GetMapping("/messages")
     public String mainPage(Model model,
-                           @AuthenticationPrincipal User user,
                            @RequestParam(required = false) String tag) {
         Iterable<Message> messages = messageRepo.findAll();
 
@@ -38,7 +37,6 @@ public class MessageController {
 
         model.addAttribute("messages", messages);
         model.addAttribute("filter", tag);
-        model.addAttribute("user", user);
 
         return "message_view";
     }
