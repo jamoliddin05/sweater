@@ -3,5 +3,6 @@
 
 <@c.page>
     <h1>Страница для входа</h1>
+    ${message!}
 <@l.login "/login", "Войти", false />
 </@c.page>
