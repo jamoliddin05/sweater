@@ -2,7 +2,7 @@
 
 <@c.page>
     <h1>Список пользователей</h1>
-    <table>
+    <table border="5">
         <thead>
         <tr>
             <th>Имя</th>
