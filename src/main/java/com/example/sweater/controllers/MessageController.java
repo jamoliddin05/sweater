@@ -41,7 +41,11 @@ public class MessageController {
     }
 
     @PostMapping("/messages")
-    public String processMessage(@AuthenticationPrincipal User user, @RequestParam String text, @RequestParam String tag, @RequestParam("file") MultipartFile file, Model model) throws IOException {
+    public String processMessage(@AuthenticationPrincipal User user,
+                                 @RequestParam String text,
+                                 @RequestParam String tag,
+                                 @RequestParam("file") MultipartFile file,
+                                 Model model) throws IOException {
         Message message = new Message(text, tag, user);
 
         if (file != null && !file.getOriginalFilename().isEmpty()) {
