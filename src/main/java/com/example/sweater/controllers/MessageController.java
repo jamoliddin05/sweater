@@ -27,11 +27,10 @@ public class MessageController {
     private String uploadPath;
 
     @GetMapping("/messages")
-    public String mainPage(Model model,
-                           @RequestParam(required = false) String tag) {
+    public String mainPage(Model model, @RequestParam(required = false) String tag) {
         Iterable<Message> messages = messageRepo.findAll();
 
-        if(tag != null && !tag.isEmpty()) {
+        if (tag != null && !tag.isEmpty()) {
             messages = messageRepo.findByTag(tag);
         }
 
@@ -42,23 +41,17 @@ public class MessageController {
     }
 
     @PostMapping("/messages")
-    public String processMessage(
-            @AuthenticationPrincipal User user,
-            @RequestParam String text,
-            @RequestParam String tag,
-            @RequestParam("file") MultipartFile file,
-            Model model
-    ) throws IOException {
+    public String processMessage(@AuthenticationPrincipal User user, @RequestParam String text, @RequestParam String tag, @RequestParam("file") MultipartFile file, Model model) throws IOException {
         Message message = new Message(text, tag, user);
 
-        if(file != null && !file.getOriginalFilename().isEmpty()) {
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
 
-            if(!uploadDir.exists()) {
+            if (!uploadDir.exists()) {
                 uploadDir.mkdir();
             }
 
-            String uuidFile =  UUID.randomUUID().toString();
+            String uuidFile = UUID.randomUUID().toString();
             String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
             file.transferTo(new File(uploadPath + "/" + resultFilename));

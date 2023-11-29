@@ -17,13 +17,13 @@
                 <a class="nav-link" href="/messages">Сообщения</a>
             </li>
             <#if isAdmin>
-            <li class="nav-item">
-                <a class="nav-link" href="/user">Панель пользователей</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">Панель пользователей</a>
+                </li>
             </#if>
             <#if user??>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/profile">Изменить данные</a>
+                    <a class="nav-link" href="/user/profile">Изменить пароль</a>
                 </li>
             </#if>
         </ul>
