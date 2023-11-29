@@ -1,6 +1,7 @@
 package com.example.sweater.models;
 
 import javax.persistence.*;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

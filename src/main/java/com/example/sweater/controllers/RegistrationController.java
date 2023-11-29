@@ -24,7 +24,7 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String register(User user, Model model) {
 
-        if(!userService.addUser(user)) {
+        if (!userService.addUser(user)) {
             model.addAttribute("message", "User exists!");
             return "registration";
         }
@@ -36,7 +36,7 @@ public class RegistrationController {
     public String activate(Model model, @PathVariable String code) {
         boolean isActivated = userService.activateUser(code);
 
-        if(isActivated) {
+        if (isActivated) {
             model.addAttribute("message", "Пользователь подтверждён!");
         } else {
             model.addAttribute("message", "Активационный код не найден");
