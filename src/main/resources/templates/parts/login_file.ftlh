@@ -26,7 +26,8 @@
                 <label class="col-sm-2 col-form-label">Введите пароль еще раз: </label>
                 <div class="col-sm-6">
                     <input type="password" name="password2"
-                           class="form-control ${(password2Error??)?string('is-invalid', '')}" placeholder="Введите пароль еще раз"/>
+                           class="form-control ${(password2Error??)?string('is-invalid', '')}"
+                           placeholder="Введите пароль еще раз"/>
                     <#if password2Error??>
                         ${password2Error}
                     </#if>
@@ -36,11 +37,20 @@
                 <label class="col-sm-2 col-form-label">Email: </label>
                 <div class="col-sm-6">
                     <input type="email" name="email" value="<#if user??>${user.email}</#if>"
-                           class="form-control ${(emailError??)?string('is-invalid', '')}" placeholder="example@some.com"/>
+                           class="form-control ${(emailError??)?string('is-invalid', '')}"
+                           placeholder="example@some.com"/>
                     <#if emailError??>
                         ${emailError}
                     </#if>
                 </div>
+            </div>
+            <div>
+                <div class="g-recaptcha" data-sitekey="6Lc9mSEpAAAAAIgmW2tzKesehYTSvYXLr5lexmRL"></div>
+                <#if captchaError??>
+                    <div class="alert alert-danger" role="alert">
+                        ${captchaError}
+                    </div>
+                </#if>
             </div>
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
