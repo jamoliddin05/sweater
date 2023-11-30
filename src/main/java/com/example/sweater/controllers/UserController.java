@@ -62,4 +62,12 @@ public class UserController {
         userService.updateProfile(user, password, email);
         return "redirect:/user/profile";
     }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @PostMapping("/delete/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUserById(id);
+        return "redirect:/user";
+    }
+
 }

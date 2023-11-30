@@ -27,10 +27,6 @@ public class User implements UserDetails {
     @NotBlank(message = "Введите пароль")
     private String password;
 
-    @Transient
-    @NotBlank(message = "Введите пароль снова")
-    private String password2;
-
     @Email(message = "Email is not correct")
     @NotBlank(message = "Введите email")
     private String email;

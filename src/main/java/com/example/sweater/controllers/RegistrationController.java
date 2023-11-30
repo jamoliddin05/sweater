@@ -5,10 +5,12 @@ import com.example.sweater.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.Map;
@@ -26,15 +28,22 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String register(@Valid User user,
+    public String register(@RequestParam("password2") String passwordConfirmation,
+                           @Valid User user,
                            BindingResult bindingResult,
                            Model model) {
-        if (user.getPassword() != null && !user.getPassword().equals(user.getPassword2())) {
+        boolean isConfirmationEmpty = StringUtils.isEmpty(passwordConfirmation);
+
+        if (isConfirmationEmpty) {
+            model.addAttribute("passwordError2", "Введите пароль снова");
+        }
+
+        if (user.getPassword() != null && !user.getPassword().equals(passwordConfirmation)) {
             model.addAttribute("passwordError", "Пароли разные!");
             return "registration";
         }
 
-        if (bindingResult.hasErrors()) {
+        if (isConfirmationEmpty || bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
 
             model.mergeAttributes(errors);
@@ -54,8 +63,10 @@ public class RegistrationController {
         boolean isActivated = userService.activateUser(code);
 
         if (isActivated) {
+            model.addAttribute("messageType", "success");
             model.addAttribute("message", "Пользователь подтверждён!");
         } else {
+            model.addAttribute("messageType", "danger");
             model.addAttribute("message", "Активационный код не найден");
         }
 

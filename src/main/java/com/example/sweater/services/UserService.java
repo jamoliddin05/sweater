@@ -120,4 +120,8 @@ public class UserService implements UserDetailsService {
         }
 
     }
+
+    public void deleteUserById(Long id) {
+        userRepo.deleteById(id);
+    }
 }
