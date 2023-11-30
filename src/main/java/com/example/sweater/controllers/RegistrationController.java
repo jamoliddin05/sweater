@@ -66,7 +66,7 @@ public class RegistrationController {
             model.addAttribute("messageType", "success");
             model.addAttribute("message", "Пользователь подтверждён!");
         } else {
-            model.addAttribute("messageType", "danger");
+            model.addAttribute("messageType", "dangerse ");
             model.addAttribute("message", "Активационный код не найден");
         }
 
