@@ -1,6 +1,8 @@
 package com.example.sweater.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,13 +21,21 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Введите имя пользователя")
     private String username;
 
+    @NotBlank(message = "Введите пароль")
     private String password;
 
-    private boolean active;
+    @Transient
+    @NotBlank(message = "Введите пароль снова")
+    private String password2;
 
+    @Email(message = "Email is not correct")
+    @NotBlank(message = "Введите email")
     private String email;
+
+    private boolean active;
 
     private String activationCode;
 

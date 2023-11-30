@@ -1,9 +1,11 @@
 package com.example.sweater.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Data
@@ -14,8 +16,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Пожалуйста заполните поле")
+    @Length(max = 2048, message = "Сообщение не должно превышать 2048 символов")
     private String text;
 
+    @Length(max = 255, message = "Не превышайте 255 символов")
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)
