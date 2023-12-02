@@ -1,7 +1,6 @@
 package com.example.sweater.controllers;
 
 import com.example.sweater.models.User;
-import com.example.sweater.models.dto.CaptchaResponseDTO;
 import com.example.sweater.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +22,6 @@ import java.util.Map;
 @Controller
 @RequiredArgsConstructor
 public class RegistrationController {
-    private static final String CAPTCHA_URL = "https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s";
 
     private final UserService userService;
     private final RestTemplate restTemplate;
@@ -38,30 +36,16 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String register(@RequestParam("password2") String passwordConfirmation,
-                           @RequestParam("g-recaptcha-response") String captchaResponse,
                            @Valid User user,
                            BindingResult bindingResult,
                            Model model) {
-        String url = String.format(CAPTCHA_URL, secret, captchaResponse);
-        CaptchaResponseDTO response = restTemplate.postForObject(url, Collections.emptyList(),
-                CaptchaResponseDTO.class);
-
-        if (!response.isSuccess()) {
-            model.addAttribute("captchaError", "Заполните Captcha");
-        }
-
-        boolean isConfirmationEmpty = StringUtils.isEmpty(passwordConfirmation);
-
-        if (isConfirmationEmpty) {
-            model.addAttribute("passwordError2", "Введите пароль снова");
-        }
 
         if (user.getPassword() != null && !user.getPassword().equals(passwordConfirmation)) {
             model.addAttribute("passwordError", "Пароли разные!");
             return "registration";
         }
 
-        if (isConfirmationEmpty || bindingResult.hasErrors() || !response.isSuccess()) {
+        if (bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
 
             model.mergeAttributes(errors);
@@ -84,7 +68,7 @@ public class RegistrationController {
             model.addAttribute("messageType", "success");
             model.addAttribute("message", "Пользователь подтверждён!");
         } else {
-            model.addAttribute("messageType", "dangerse ");
+            model.addAttribute("messageType", "danger");
             model.addAttribute("message", "Активационный код не найден");
         }
 
