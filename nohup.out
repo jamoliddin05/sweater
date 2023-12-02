@@ -1,0 +1,157 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:sweater >-------------------------
+[INFO] Building sweater 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ sweater ---
+[INFO] Deleting /Users/jamoliddiniloldinov/Desktop/Java/sweater/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ sweater ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ sweater ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /Users/jamoliddiniloldinov/Desktop/Java/sweater/target/classes
+[INFO] /Users/jamoliddiniloldinov/Desktop/Java/sweater/src/main/java/com/example/sweater/services/UserService.java: Some input files use or override a deprecated API.
+[INFO] /Users/jamoliddiniloldinov/Desktop/Java/sweater/src/main/java/com/example/sweater/services/UserService.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ sweater ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/jamoliddiniloldinov/Desktop/Java/sweater/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ sweater ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/jamoliddiniloldinov/Desktop/Java/sweater/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ sweater ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.sweater.SweaterApplicationTests
+23:16:26.177 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:16:26.182 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:16:26.197 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.sweater.SweaterApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:16:26.202 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.sweater.SweaterApplicationTests], using SpringBootContextLoader
+23:16:26.204 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.sweater.SweaterApplicationTests]: class path resource [com/example/sweater/SweaterApplicationTests-context.xml] does not exist
+23:16:26.204 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.sweater.SweaterApplicationTests]: class path resource [com/example/sweater/SweaterApplicationTestsContext.groovy] does not exist
+23:16:26.204 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.sweater.SweaterApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:16:26.205 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.sweater.SweaterApplicationTests]: SweaterApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:16:26.223 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.sweater.SweaterApplicationTests]
+23:16:26.249 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/jamoliddiniloldinov/Desktop/Java/sweater/target/classes/com/example/sweater/SweaterApplication.class]
+23:16:26.249 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.sweater.SweaterApplication for test class com.example.sweater.SweaterApplicationTests
+23:16:26.290 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.sweater.SweaterApplicationTests]: using defaults.
+23:16:26.290 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+23:16:26.299 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5e01a982, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5ddea849, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5ee2b6f9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@23d1e5d0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@704f1591, org.springframework.test.context.support.DirtiesContextTestExecutionListener@58fb7731, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13e547a9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3fb6cf60, org.springframework.test.context.event.EventPublishingTestExecutionListener@37ddb69a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@349c1daf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@dfddc9a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4b9df8a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5e8ac0e1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@aafcffa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6955cb39]
+23:16:26.300 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@781f10f2 testClass = SweaterApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2a79d4b1 testClass = SweaterApplicationTests, locations = '{}', classes = '{class com.example.sweater.SweaterApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51bd8b5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@64ec96c6, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@27912e3, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@93081b6, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@37911f88, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1b1473ab], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.14)
+
+2023-12-01 23:16:26.646  INFO 1596 --- [           main] c.e.sweater.SweaterApplicationTests      : Starting SweaterApplicationTests using Java 11.0.19 on MacBook-Air-Jamoliddin.local with PID 1596 (started by jamoliddiniloldinov in /Users/jamoliddiniloldinov/Desktop/Java/sweater)
+2023-12-01 23:16:26.646  INFO 1596 --- [           main] c.e.sweater.SweaterApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2023-12-01 23:16:27.019  INFO 1596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-01 23:16:27.050  INFO 1596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2023-12-01 23:16:27.351  INFO 1596 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2023-12-01 23:16:27.352  INFO 1596 --- [           main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2023-12-01 23:16:27.352  INFO 1596 --- [           main] o.f.c.internal.license.VersionPrinter    : 
+2023-12-01 23:16:27.357  INFO 1596 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-01 23:16:27.416  INFO 1596 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-01 23:16:27.426  INFO 1596 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost/sweater (PostgreSQL 14.10)
+2023-12-01 23:16:27.453  INFO 1596 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.016s)
+2023-12-01 23:16:27.458  INFO 1596 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 3
+2023-12-01 23:16:27.458  INFO 1596 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2023-12-01 23:16:27.526  INFO 1596 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-01 23:16:27.554  INFO 1596 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-01 23:16:27.633  INFO 1596 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-01 23:16:27.694  INFO 1596 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-12-01 23:16:28.106  INFO 1596 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-01 23:16:28.114  INFO 1596 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-01 23:16:28.365  WARN 1596 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-01 23:16:28.574  INFO 1596 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b9a2629, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50aa9a91, org.springframework.security.web.context.SecurityContextPersistenceFilter@16f2d883, org.springframework.security.web.header.HeaderWriterFilter@468eff41, org.springframework.security.web.csrf.CsrfFilter@c7a1db6, org.springframework.security.web.authentication.logout.LogoutFilter@257708e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@8d52313, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69988d42, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52a3eef8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2c9aeec6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@663e1144, org.springframework.security.web.session.SessionManagementFilter@2b9370cc, org.springframework.security.web.access.ExceptionTranslationFilter@7eb94590, org.springframework.security.web.access.intercept.AuthorizationFilter@4353db40]
+2023-12-01 23:16:29.100  INFO 1596 --- [           main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-12-01 23:16:29.105  INFO 1596 --- [           main] c.e.sweater.SweaterApplicationTests      : Started SweaterApplicationTests in 2.786 seconds (JVM running for 3.261)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.029 s - in com.example.sweater.SweaterApplicationTests
+2023-12-01 23:16:29.186  INFO 1596 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-01 23:16:29.187  INFO 1596 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-01 23:16:29.190  INFO 1596 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ sweater ---
+[INFO] Building jar: /Users/jamoliddiniloldinov/Desktop/Java/sweater/target/sweater-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.14:repackage (repackage) @ sweater ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.374 s
+[INFO] Finished at: 2023-12-01T23:16:30+05:00
+[INFO] ------------------------------------------------------------------------
+Copy files...
+Restart server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-89-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Dec  1 06:16:30 PM UTC 2023
+
+  System load:             0.0107421875
+  Usage of /:              44.1% of 22.94GB
+  Memory usage:            34%
+  Swap usage:              0%
+  Processes:               225
+  Users logged in:         1
+  IPv4 address for enp0s1: 10.211.55.4
+  IPv6 address for enp0s1: fd67:b77d:4353:845b:d0b2:fbff:fe9c:8471
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+32 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+Usage:
+ kill [options] <pid> [...]
+
+Options:
+ <pid> [...]            send signal to every <pid> listed
+ -<signal>, -s, --signal <signal>
+                        specify the <signal> to be sent
+ -q, --queue <value>    integer value to be sent with the signal
+ -l, --list=[<signal>]  list all signal names, or convert one to a name
+ -L, --table            list all signal names in a nice table
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see kill(1).
+nohup: failed to run command 'java': No such file or directory
+Bye
