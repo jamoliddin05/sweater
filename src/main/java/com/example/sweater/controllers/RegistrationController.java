@@ -24,10 +24,6 @@ import java.util.Map;
 public class RegistrationController {
 
     private final UserService userService;
-    private final RestTemplate restTemplate;
-
-    @Value("${recaptcha.secret}")
-    private String secret;
 
     @GetMapping("/registration")
     public String register() {
