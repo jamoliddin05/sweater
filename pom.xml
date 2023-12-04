@@ -12,7 +12,7 @@
     <artifactId>sweater</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sweater</name>
-    <description>sweater</description>
+    <description>Clone of twitter</description>
     <properties>
         <java.version>11</java.version>
     </properties>
