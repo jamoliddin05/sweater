@@ -126,4 +126,22 @@ public class UserService implements UserDetailsService {
     public void deleteUserById(Long id) {
         userRepo.deleteById(id);
     }
+
+    public void subscribe(User currentUser, User user) {
+        Set<User> subscribers = user.getSubscribers();
+        subscribers.add(currentUser);
+        user.setSubscribers(subscribers);
+        userRepo.save(user);
+    }
+
+    public void unsubscribe(User currentUser, User user) {
+        Set<User> subscribers = user.getSubscribers();
+        subscribers.remove(currentUser);
+        user.setSubscribers(subscribers);
+        userRepo.save(user);
+    }
+
+    public User findUserById(String user) {
+        return userRepo.findById(Long.valueOf(user)).orElse(null);
+    }
 }
