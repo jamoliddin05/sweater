@@ -4,7 +4,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <form method="get" action="/messages" class="form-inline">
-                <input type="text" name="tag" class="form-control" value="${filter!}" placeholder="Поиск по тегу">
+                <input type="text" name="tag" class="form-control" value="${filter!}" placeholder="Поиск по тегу" />
                 <button type="submit" class="btn btn-primary ml-2">Найти</button>
             </form>
         </div>

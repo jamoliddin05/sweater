@@ -1,6 +1,6 @@
 package com.example.sweater.models;
 
-import lombok.*;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -12,8 +12,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
 @Entity
+@ToString(of = {"id", "username", "active", "email"})
 @Table(name = "usr")
 public class User implements UserDetails {
     @Id
@@ -21,10 +21,8 @@ public class User implements UserDetails {
     private Long id;
 
     @NotBlank(message = "Введите имя пользователя")
-    @NotBlank(message = "Введите имя пользователя")
     private String username;
 
-    @NotBlank(message = "Введите пароль")
     @NotBlank(message = "Введите пароль")
     private String password;
 
@@ -103,5 +101,85 @@ public class User implements UserDetails {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public @NotBlank(message = "Введите имя пользователя") String getUsername() {
+        return this.username;
+    }
+
+    public @NotBlank(message = "Введите пароль") String getPassword() {
+        return this.password;
+    }
+
+    public @Email(message = "Email is not correct") @NotBlank(message = "Введите email") String getEmail() {
+        return this.email;
+    }
+
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public String getActivationCode() {
+        return this.activationCode;
+    }
+
+    public Set<Role> getRoles() {
+        return this.roles;
+    }
+
+    public Set<Message> getMessages() {
+        return this.messages;
+    }
+
+    public Set<User> getSubscribers() {
+        return this.subscribers;
+    }
+
+    public Set<User> getSubscriptions() {
+        return this.subscriptions;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUsername(@NotBlank(message = "Введите имя пользователя") String username) {
+        this.username = username;
+    }
+
+    public void setPassword(@NotBlank(message = "Введите пароль") String password) {
+        this.password = password;
+    }
+
+    public void setEmail(@Email(message = "Email is not correct") @NotBlank(message = "Введите email") String email) {
+        this.email = email;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void setMessages(Set<Message> messages) {
+        this.messages = messages;
+    }
+
+    public void setSubscribers(Set<User> subscribers) {
+        this.subscribers = subscribers;
+    }
+
+    public void setSubscriptions(Set<User> subscriptions) {
+        this.subscriptions = subscriptions;
     }
 }
