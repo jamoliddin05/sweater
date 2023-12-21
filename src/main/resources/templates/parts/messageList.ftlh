@@ -3,7 +3,7 @@
 <div>Список сообщений</div>
 <div class="card-columns" id="message-list">
     <#list messages as message>
-        <div class="card my-2">
+        <div class="card my-2" data-id="${message.id}">
             <#if message.filename??>
                 <img class="card-img-top" src="/img/${message.filename}" alt="something"/>
             </#if>
